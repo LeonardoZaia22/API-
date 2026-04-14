@@ -1,22 +1,30 @@
 <?php
-//CABEÇALHO
-header("Content-Type: application/json"); // Define o tipo de resposta
+    header("Content-Type: application/json");
 
-$metodo = $_SERVER['REQUEST_METHOD'];
+    $metodo = $_SERVER["REQUEST_METHOD"];
 
-//echo "Método da requisição: " . $metodo;
+    // echo "Método HTTP: $metodo";
 
-switch ($metodo) {
-    case 'GET':
-        echo "AQUI AÇÕES DO MÉTODO GET";
-        break;
+    switch ($metodo) {
+        case 'GET':
+            echo "Aqui ações do metodo GET";
+            break;
+         case 'POST':
+             echo "Aqui ações do metodo POST";
+             break;
+        
+        default:
+        echo "método não encontrado";
+            break;
+    }
 
-    case 'POST':
-        echo "AQUI AÇÕES DO MÉTODO POST";
-        break;
+    // $usuarios = [
+    //     ["id" => 1, "nome" => "Maria Souza", "email" => "maria@email.com"],
+    //     ["id" => 2, "nome" => "João Silva", "email" => "joao@email.com" ]
+    // ];
 
-    default:
-        echo "MÉTODO NÃO ENCONTRADO!";
-        break;
-}
+    // echo json_encode($usuarios);
+
+
+
 ?>
